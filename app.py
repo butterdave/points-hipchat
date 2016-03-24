@@ -4,8 +4,8 @@ from flask import Flask, jsonify
 app = Flask(__name__)
 
 
-@app.route('/dat-checklist', methods=['POST'])
-def dat_checklist():
+@app.route('/dat', methods=['POST'])
+def dat():
     checklist = {
         'color': 'green',
         'message': (
@@ -34,6 +34,5 @@ def hello():
 
 
 if __name__ == '__main__':
-    # Bind to PORT if defined, otherwise default to 5000.
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
